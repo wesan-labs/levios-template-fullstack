@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@wesan-labs/levios": "2.13.2",
-    "@wesan-labs/levios-file-supabase": "2.13.1",
+    "@wesan-labs/levios-file-supabase": "0.1.0",
     "@wesan-labs/levios-provider-whatsapp-business": "0.2.0"
   },
   "devDependencies": {
