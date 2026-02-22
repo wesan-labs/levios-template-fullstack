@@ -35,5 +35,27 @@ export default defineConfig({
           },
         ]
       : []),
+    ...(process.env.WHATSAPP_ACCESS_TOKEN
+      ? [
+          {
+            resolve: "@leviosjs/levios/notification",
+            options: {
+              providers: [
+                {
+                  resolve: "@wesan-labs/levios-provider-whatsapp-business",
+                  id: "whatsapp-business",
+                  options: {
+                    channels: ["whatsapp"],
+                    access_token: process.env.WHATSAPP_ACCESS_TOKEN,
+                    phone_number_id: process.env.WHATSAPP_PHONE_NUMBER_ID,
+                    app_secret: process.env.WHATSAPP_APP_SECRET,
+                    verify_token: process.env.WHATSAPP_VERIFY_TOKEN,
+                  },
+                },
+              ],
+            },
+          },
+        ]
+      : []),
   ],
 })
